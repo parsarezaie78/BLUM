@@ -2,7 +2,7 @@
 
 # Auto Blum NodeJS Tool
 
-> [!WARNING]  
+> [!WARNING] 
 > Selling this tool in any form is strictly prohibited!
 
 ## 🛠️ Installation Guide
