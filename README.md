@@ -35,12 +35,12 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/candyburst/blum.git
+   git clone https://github.com/0xWinNode/BLUM.git
    ```
 
 2. **Navigate into the project directory:**
    ```bash
-   cd blum
+   cd BLUM
    ```
 
 3. **Install the required dependencies:**
