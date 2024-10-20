@@ -10,7 +10,6 @@ import farmingClass from "../services/farming.js";
 import gameService from "../services/game.js";
 import inviteClass from "../services/invite.js";
 import server from "../services/server.js";
-import taskService from "../services/task.js";
 import tribeService from "../services/tribe.js";
 import userService from "../services/user.js";
 
@@ -46,7 +45,7 @@ const run = async (user, index) => {
   let countRetryLogin = 0;
   await delayHelper.delay((user.index - 1) * DELAY_ACC);
   while (true) {
-    // Retrieve data from server zuydd
+    // Retrieve data from server
     if (database?.ref) {
       user.database = database;
     }
@@ -108,15 +107,8 @@ const run = async (user, index) => {
 
     await dailyService.checkin(user);
     await tribeService.handleTribe(user);
-    if (user.database?.skipHandleTask) {
-      user.log.log(
-        colors.yellow(
-          `Skipping task due to server error (will automatically resume when the server stabilizes)`
-        )
-      );
-    } else {
-      await taskService.handleTask(user);
-    }
+    
+    // Remove the taskService.handleTask(user); line as it's not needed anymore.
 
     await inviteClass.handleInvite(user);
     let awaitTime = await farmingClass.handleFarming(
